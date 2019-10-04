@@ -1,5 +1,4 @@
 const express = require('express');
-const projectDataBase = require('../data/helpers/projectModel');
 const actionDataBase = require('../data/helpers/actionModel');
 
 const router = express.Router();
@@ -33,7 +32,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     const action = req.body
-    if (!action.project_id || !action.description || !action.notes) {
+    if (!action.project_id || !action.description || !action.notes || action.description > 128) {
         res.status(400).json({ error : "please provide all the needed values (project_id, description, and notes)"})
     } else {
         actionDataBase
