@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 
 const server = express()
 
@@ -10,10 +11,10 @@ server.use(express.json())
 // requests
 
 server.get('/', (req, res) => {
-    res.send(`<h1>Hello Im about to do stuff</h1>`)
+    res.send(`<h1>Hello Im about to do stuffs</h1>`)
 })
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`server listening on port ${port}`))
 
 
