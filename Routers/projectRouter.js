@@ -98,5 +98,20 @@ router.put('/:id', (req, res) => {
     }
 })
 
+//custom middleWare \\ does not work for some reason
+
+function checkRequiredField(req, res, next) {
+    if (req.body) {
+        if (!req.body.name || project.description) {
+            res.status(400).json({ error: "please provide name and description of project"})
+        } else {
+            res.json(req.body)
+            next();
+        }
+    } else {
+        res.status(400).json({ error: 'missing data' })
+    }
+}
+
 
 module.exports = router;
