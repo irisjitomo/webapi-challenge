@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     const action = req.body
-    if (!action.project_id || !action.description || !action.notes || action.description > 128) {
+    if (!action.project_id || !action.description || !action.notes || action.description.length > 128) {
         res.status(400).json({ error : "please provide all the needed values (project_id, description, and notes)"})
     } else {
         actionDataBase
