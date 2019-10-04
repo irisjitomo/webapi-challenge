@@ -26,13 +26,23 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    Express gives Node extra functionality like middleWare and Routing
+
 - [ ] Describe Middleware?
+
+    MiddleWare is a function that happens when you make API requests. You can make your own middlewares such as logging and checking for requirements for the CRUD request 
 
 - [ ] Describe a Resource?
 
+    The URL in which we make our requests
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+    response statuses like res.status(200)
+
 - [ ] How can we partition our application into sub-applications?
+
+    using routing to break it down (just like components in React) via Express
 
 ## Project Setup
 
@@ -73,7 +83,11 @@ The `projectModel.js` helper includes an extra method called `getProjectActions(
 
 Design and build the necessary endpoints to:
 
-- [ ] Perform CRUD operations on _projects_ and _actions_. When adding an action, make sure the `project_id` provided belongs to an existing `project`. If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
+- [ ] Perform CRUD operations on _projects_ and _actions_. When adding an action,
+
+ !!!!!!!!!!!!! make sure the `project_id` provided belongs to an existing `project`. !!!!!!!!!!!!!!!
+ 
+ If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
 - [ ] Retrieve the list of actions for a project.
 
 ### Database Schemas

@@ -1,3 +1,44 @@
+const express = require('express')
+const actionRouter = require('./Routers/actionRouter');
+const projectRouter = require('./Routers/projectRouter');
+require('dotenv').config()
+
+const server = express()
+
+
+//middleWare
+
+server.use(express.json())
+server.use('/api/actions', actionRouter);
+server.use('/api/projects', projectRouter);
+
+// requests
+
+server.get('/', (req, res) => {
+    res.send(`<h1>Hello Im about to do stuffs</h1>`)
+})
+
+const port = process.env.PORT || 5000;
+server.listen(port, () => console.log(`server listening on port ${port}`)) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 play this: https://www.youtube.com/watch?v=d-diB65scQU
 
